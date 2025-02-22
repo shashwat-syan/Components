@@ -31,11 +31,13 @@
       margin: 100px auto;
       padding: 32px;
       padding-left: 86px;
+      padding-right: 48px;
       border-radius: 8px;
 
       display: flex;
-      align-items: center;
+      /* align-items: center; */
       gap: 86px;
+      position: relative;
     }
 
     img {
@@ -60,21 +62,76 @@
       font-size: 12px;
       color: #c3fae8;
     }
+    /* STYLING CONTROLS*/
+    .btn {
+      background-color: #fff;
+      border: none;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      position: absolute;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .btn--left {
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+    .btn--right {
+      right: 0;
+      top: 50%;
+      transform: translate(50%, -50%);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-icon {
+      height: 24px;
+      width: 24px;
+      stroke: #087f5b;
+    }
+    /* STYLING BUTTON (DOTS) */
+    .dots {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 32px);
+
+      display: flex;
+      gap: 8px;
+    }
+    .dot {
+      height: 12px;
+      width: 12px;
+      background-color: #fff;
+      border: 2px solid #087f5b;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .dot-filled {
+      background-color: #087f5b;
+    }
   </style>
   <body>
     <div class="carousel">
       <img src="/img/maria.jpg" alt="Maria de Almeida" />
       <blockquote class="testimonial">
         <p class="testimonial-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod iure,
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod iure,
           error alias aperiam deserunt pariatur officiis atque sed
-          dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit."
         </p>
         <p class="testimoniol-author">Maria de Almeida</p>
         <p class="testimoniol-job">Product Designer at Swish</p>
       </blockquote>
 
-      <button class="btn">
+      <button class="btn btn--left">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -90,7 +147,7 @@
           />
         </svg>
       </button>
-      <button class="btn">
+      <button class="btn btn--right">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -106,6 +163,12 @@
           />
         </svg>
       </button>
+      <div class="dots">
+        <button class="dot dot-filled">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
     </div>
   </body>
 </html>
